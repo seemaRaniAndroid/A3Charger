@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">A3Charger</string>
+    <string name="rider">Rider</string>
+    <string name="sign_in">Sign In</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="dashboard">DashBoard</string>
+    <string name="click_to_upload">Click to Upload</string>
+    <string name="no_of_employees">No. of Employees</string>
+    <string name="nearest_vector_distance">Nearest vector Distance</string>
+    <string name="suitable_location_for_a3">Suitable location for A3</string>
+    <string name="select_status">Select Status</string>
+    <string name="date">Date</string>
+    <string name="remarks">Remarks</string>
+    <string name="next">Next</string>
+    <string name="number_of_outlets">Number of Outlets</string>
+    <string name="address">Address</string>
+</resources>

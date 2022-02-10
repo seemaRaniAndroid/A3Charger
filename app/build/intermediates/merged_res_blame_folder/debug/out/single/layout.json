@@ -1,0 +1,38 @@
+[
+    {
+        "merged": "C:\\Users\\dubey\\Downloads\\A3Riderzip\\A3Charger\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_review_details.xml",
+        "source": "C:\\Users\\dubey\\Downloads\\A3Riderzip\\A3Charger\\app\\src\\main\\res\\layout\\activity_review_details.xml"
+    },
+    {
+        "merged": "C:\\Users\\dubey\\Downloads\\A3Riderzip\\A3Charger\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_completed.xml",
+        "source": "C:\\Users\\dubey\\Downloads\\A3Riderzip\\A3Charger\\app\\src\\main\\res\\layout\\fragment_completed.xml"
+    },
+    {
+        "merged": "C:\\Users\\dubey\\Downloads\\A3Riderzip\\A3Charger\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\row_list_layout.xml",
+        "source": "C:\\Users\\dubey\\Downloads\\A3Riderzip\\A3Charger\\app\\src\\main\\res\\layout\\row_list_layout.xml"
+    },
+    {
+        "merged": "C:\\Users\\dubey\\Downloads\\A3Riderzip\\A3Charger\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_detail.xml",
+        "source": "C:\\Users\\dubey\\Downloads\\A3Riderzip\\A3Charger\\app\\src\\main\\res\\layout\\activity_detail.xml"
+    },
+    {
+        "merged": "C:\\Users\\dubey\\Downloads\\A3Riderzip\\A3Charger\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_splash.xml",
+        "source": "C:\\Users\\dubey\\Downloads\\A3Riderzip\\A3Charger\\app\\src\\main\\res\\layout\\activity_splash.xml"
+    },
+    {
+        "merged": "C:\\Users\\dubey\\Downloads\\A3Riderzip\\A3Charger\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_login.xml",
+        "source": "C:\\Users\\dubey\\Downloads\\A3Riderzip\\A3Charger\\app\\src\\main\\res\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\dubey\\Downloads\\A3Riderzip\\A3Charger\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_pending.xml",
+        "source": "C:\\Users\\dubey\\Downloads\\A3Riderzip\\A3Charger\\app\\src\\main\\res\\layout\\fragment_pending.xml"
+    },
+    {
+        "merged": "C:\\Users\\dubey\\Downloads\\A3Riderzip\\A3Charger\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\layout_appbar.xml",
+        "source": "C:\\Users\\dubey\\Downloads\\A3Riderzip\\A3Charger\\app\\src\\main\\res\\layout\\layout_appbar.xml"
+    },
+    {
+        "merged": "C:\\Users\\dubey\\Downloads\\A3Riderzip\\A3Charger\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_venue.xml",
+        "source": "C:\\Users\\dubey\\Downloads\\A3Riderzip\\A3Charger\\app\\src\\main\\res\\layout\\activity_venue.xml"
+    }
+]

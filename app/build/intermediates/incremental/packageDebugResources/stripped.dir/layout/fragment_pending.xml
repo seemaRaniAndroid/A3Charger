@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+                                                       
+                                                   
+
+    
+
+                 
+                               
+                                                                      
+
+           
+
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" android:tag="layout/fragment_pending_0" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_pending"
+            android:layout_width="match_parent"
+            android:nestedScrollingEnabled="true"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:overScrollMode="never"
+            android:scrollbarAlwaysDrawVerticalTrack="true"
+            android:scrollbarThumbVertical="@color/label_color"
+            android:scrollbars="vertical"
+            android:verticalScrollbarPosition="right"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/row_list_layout" />
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+         

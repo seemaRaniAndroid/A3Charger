@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+                                                       
+                                                   
+
+    
+
+                 
+                             
+                                                                    
+           
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"
+        tools:context=".UI.Activities.Login.LoginActivity" android:tag="layout/activity_login_0" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/label_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/a3_logo" />
+
+            <in.parangat.a3charger.fontclass.SemiBoldTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_5sdp"
+                android:text="@string/rider"
+                android:textAlignment="center"
+                android:textColor="@color/label_color"
+                android:textSize="@dimen/_20sdp" />
+
+        </LinearLayout>
+
+        <in.parangat.a3charger.fontclass.ET_Edittext
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/et_box"
+            android:hint="@string/email"
+            android:imeOptions="actionNext"
+            android:padding="@dimen/_10sdp"
+            android:singleLine="true"
+            android:tag="binding_1"            
+            android:textColorHint="#596E6E6E"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <in.parangat.a3charger.fontclass.SemiBoldTextView
+            android:id="@+id/btn_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/drawable_box"
+            android:gravity="center"
+            android:tag="binding_2"                           
+            android:padding="@dimen/_10sdp"
+            android:text="@string/sign_in"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/email">
+
+            <in.parangat.a3charger.fontclass.ET_Edittext
+                android:id="@+id/edit_password"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/et_box"
+                android:hint="Password"
+                android:imeOptions="actionDone"
+                android:inputType="textPassword"
+                android:padding="@dimen/_10sdp"
+                android:singleLine="true"
+                android:tag="binding_3"               
+                android:textColor="@color/black"
+                android:textColorHint="#596E6E6E"
+                android:textSize="@dimen/_12sdp" />
+
+            <ImageView
+                android:id="@+id/show_pass_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:alpha=".5"
+                android:onClick="showHidPass"
+                android:padding="@dimen/_2sdp"
+
+                android:src="@drawable/eye_close" />
+        </RelativeLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+         
