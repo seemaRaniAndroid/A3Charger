@@ -1,6 +1,7 @@
 package `in`.parangat.a3charger.Connectivity
 
-import `in`.parangat.a3charger.model.BasicResponse
+import `in`.parangat.a3charger.model.LoginResponse
+import `in`.parangat.a3charger.model.ReceeResponse
 import `in`.parangat.a3charger.model.VenueResponse
 import com.google.gson.GsonBuilder
 import io.reactivex.Observable
@@ -19,23 +20,45 @@ interface ApiServices {
     @FormUrlEncoded
     @POST("rider/login")
     @JvmSuppressWildcards
+    @Headers(
+        "time:1602487422",
+        "hash:3d3607b6ef6850bc98681d2ebc10e42a",
+        "ocode:korea",
+        "openid:n5dvamlpn25slmOc"
+    )
     fun getUserLogin(
-        @HeaderMap headers: Map<String, Any>,
         @Field("username") username: String,
         @Field("password") pass: String
-    ): Observable<BasicResponse>
+    ): Observable<LoginResponse>
 
     //VenueList
     @FormUrlEncoded
     @POST("rider/venueList")
     @JvmSuppressWildcards
+    @Headers(
+        "time:1602487422",
+        "hash:3d3607b6ef6850bc98681d2ebc10e42a",
+        "ocode:korea",
+        "openid:n5dvamlpn25slmOc"
+    )
     fun getPendingList(
-        @HeaderMap headers: Map<String, Any>,
         @Field("user_id") user_id: String,
         @Field("status") status: String
     ): Observable<VenueResponse>
 
 
+    @FormUrlEncoded
+    @POST("rider/addRecce")
+    @JvmSuppressWildcards
+    @Headers(
+        "time:1602487422",
+        "hash:3d3607b6ef6850bc98681d2ebc10e42a",
+        "ocode:korea",
+        "openid:n5dvamlpn25slmOc"
+    )
+    fun getReceeData(
+        @Field("venue_id") venue_id: String,
+        ): Observable<ReceeResponse>
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Companion Object of Retrofit~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//

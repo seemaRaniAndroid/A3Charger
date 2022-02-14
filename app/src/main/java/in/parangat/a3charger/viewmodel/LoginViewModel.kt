@@ -2,8 +2,8 @@ package `in`.parangat.a3charger.viewmodel
 
 import `in`.parangat.a3charger.Database.SharedPreferenceUtil
 import `in`.parangat.a3charger.Helper.*
-import `in`.parangat.a3charger.model.BasicResponse
 import `in`.parangat.a3charger.UI.Activities.Venue.VenueActivity
+import `in`.parangat.a3charger.model.LoginResponse
 import android.annotation.SuppressLint
 import android.app.Application
 import android.util.Log
@@ -21,7 +21,7 @@ class LoginViewModel(application: Application) : AndroidViewModel(application) {
     var email: ObservableField<String>? = null
     var password: ObservableField<String>? = null
     var progressDialog: SingleLiveEvent<Boolean>? = null
-    var basicResponse: MutableLiveData<BasicResponse>? = null
+    var loginResponse: MutableLiveData<LoginResponse>? = null
     val prefs by lazy {
         SharedPreferenceUtil.getInstance(application)
     }
@@ -44,31 +44,33 @@ class LoginViewModel(application: Application) : AndroidViewModel(application) {
             }
             else -> {
                 progressDialog?.value = true
-                hashMap["time"] = unixTime
-                hashMap["hash"] ="3d3607b6ef6850bc98681d2ebc10e42a"
-                hashMap["ocode"] = "korea"
-                hashMap["openid"] ="n5dvamlpn25slmOc"
-                Log.e(TAG, "getUserLogin: "+ unixTime )
-                apiService.getUserLogin(hashMap, email!!.get()!!.trim(), password!!.get()!!.trim())
+                apiService.getUserLogin(email!!.get()!!.trim(), password!!.get()!!.trim())
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe({ onSuccess(it) }, { onFailure(it) })
+
             }
+
         }
+
 
     }
 
-    fun onSuccess(it: BasicResponse) {
+
+    fun onSuccess(it: LoginResponse) {
         progressDialog?.value = false
-        basicResponse?.value = it
-        Log.e(TAG, "onSuccess: $it" )
-//        prefs.saveUserBeanResponse(it.userData!![0])
+        loginResponse?.value = it
+        Log.e(TAG, "onSuccess: $it")
+        Toast.makeText(getApplication(),it.msg,Toast.LENGTH_SHORT).show()
+        prefs.loggedIn=true
         gotoActivity(getApplication(), VenueActivity::class.java)
 
     }
 
     fun onFailure(it: Throwable) {
         progressDialog?.value = false
+        Log.e(TAG, "onFailure: $it")
+
     }
 
 }

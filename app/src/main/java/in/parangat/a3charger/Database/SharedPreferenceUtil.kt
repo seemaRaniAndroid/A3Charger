@@ -29,6 +29,11 @@ class SharedPreferenceUtil private constructor(val context: Context) {
         }
     }
 
+    var loggedIn: Boolean
+        get() = sharedPreferences["loggedIn", false]!!
+        set(value) = sharedPreferences.set("loggedIn", true)
+
+
     var fcmToken: String?
         get() = sharedPreferences["fcmToken", ""]!!
         set(value) = sharedPreferences.set("fcmToken", value)
@@ -106,6 +111,7 @@ class SharedPreferenceUtil private constructor(val context: Context) {
     fun clear(key: String?) {
         editor.remove(key).apply()
     }
+
 
 
 }

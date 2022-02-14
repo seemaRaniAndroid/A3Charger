@@ -26,7 +26,7 @@ class CompletedAdapter: RecyclerView.Adapter<CompletedAdapter.DeveloperViewHolde
     override fun onBindViewHolder(mDeveloperViewHolder: DeveloperViewHolder, i: Int) {
         val currentModel = mDeveloperModel!![i]
         mDeveloperViewHolder.mDeveloperListItemBinding.datamodel = currentModel
-        mDeveloperViewHolder.mDeveloperListItemBinding.tvCount.text= mDeveloperModel!!.size.toString()+"."
+        mDeveloperViewHolder.mDeveloperListItemBinding.tvCount.text=(i+1).toString()+"."
         mDeveloperViewHolder.mDeveloperListItemBinding.root.setOnClickListener {
             listener.onItemClick(position = i,mDeveloperModel!!)
         }

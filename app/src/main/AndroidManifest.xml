@@ -26,6 +26,9 @@
             android:name=".UI.Activities.Login.LoginActivity"
             android:exported="false" />
         <activity
+            android:name=".UI.Activities.SubmittedSuccessfully"
+            android:exported="false" />
+        <activity
             android:name=".UI.Activities.SplashActivity"
             android:exported="true">
             <intent-filter>

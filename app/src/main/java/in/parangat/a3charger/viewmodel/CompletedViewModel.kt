@@ -3,6 +3,7 @@ package `in`.parangat.a3charger.viewmodel
 import `in`.parangat.a3charger.Helper.*
 import `in`.parangat.a3charger.model.VenueDataItem
 import `in`.parangat.a3charger.model.VenueResponse
+import android.annotation.SuppressLint
 import android.app.Application
 import android.util.Log
 import androidx.lifecycle.AndroidViewModel
@@ -11,17 +12,17 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import org.json.JSONArray
 
-class CompletedViewModel(application: Application):AndroidViewModel(application)
-{
+class CompletedViewModel(application: Application) : AndroidViewModel(application) {
     var mList: MutableLiveData<ArrayList<VenueDataItem>?>? = null
     var list: ArrayList<VenueDataItem>? = ArrayList()
     var progressDialog: SingleLiveEvent<Boolean>? = null
+
     init {
         progressDialog = SingleLiveEvent<Boolean>()
     }
 
 
-    fun dashboardData(userId: String,status: String): MutableLiveData<ArrayList<VenueDataItem>?>? {
+    fun dashboardData(userId: String, status: String): MutableLiveData<ArrayList<VenueDataItem>?>? {
         if (mList == null) {
             mList = MutableLiveData<ArrayList<VenueDataItem>?>()
             prepareDashboard(userId, status)
@@ -29,17 +30,14 @@ class CompletedViewModel(application: Application):AndroidViewModel(application)
         return mList
     }
 
+    @SuppressLint("CheckResult")
     fun prepareDashboard(userId: String, status: String) {
         progressDialog?.value = true
-        hashMap["time"] = unixTime
-        hashMap["hash"] = "3d3607b6ef6850bc98681d2ebc10e42a"
-        hashMap["ocode"] = "korea"
-        hashMap["openid"] = "n5dvamlpn25slmOc"
-        Log.e(TAG, "init: $hashMap" )
-
-        apiService.getPendingList(hashMap, userId, status).subscribeOn(Schedulers.io()).observeOn(
+        apiService.getPendingList( userId, "1").subscribeOn(Schedulers.io()).observeOn(
             AndroidSchedulers.mainThread()
-        ).subscribe({ onSuccess(it) }, { onFailure(it) })
+        ).subscribe({
+            onSuccess(it)
+        }, { onFailure(it) })
     }
 
     fun onSuccess(it: VenueResponse) {

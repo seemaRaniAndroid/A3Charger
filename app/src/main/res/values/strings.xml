@@ -14,6 +14,7 @@
     <string name="date">Date</string>
     <string name="remarks">Remarks</string>
     <string name="next">Next</string>
+    <string name="submit">Submit</string>
     <string name="number_of_outlets">Number of Outlets</string>
     <string name="address">Address</string>
 </resources>

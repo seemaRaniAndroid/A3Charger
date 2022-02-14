@@ -1,9 +1,363 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".UI.Activities.Detail.ReviewDetailsActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <data>
+
+        <variable
+            name="listener"
+            type="android.view.View.OnClickListener" />
+
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        tools:context=".UI.Activities.Detail.DetailActivity">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="8dp">
+
+            <RelativeLayout
+                android:id="@+id/ll_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <ImageView
+                    android:id="@+id/header_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:onClick="@{listener.onClick}"
+                    android:padding="8dp"
+                    android:src="@drawable/backarrow" />
+
+                <in.parangat.a3charger.fontclass.SemiBoldTextView
+                    android:id="@+id/header_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:padding="@dimen/_6sdp"
+                    android:textColor="@color/label_color"
+                    android:textSize="@dimen/_15sdp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/header_edit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:onClick="@{listener.onClick}"
+                    android:padding="8dp"
+                    android:src="@android:drawable/ic_menu_edit" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/lyt1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="4dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ll_toolbar">
+
+                <in.parangat.a3charger.fontclass.SemiBoldTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/number_of_outlets"
+                    android:textColor="@color/black"
+                    android:textSize="12sp" />
+
+                <in.parangat.a3charger.fontclass.ET_Edittext
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:background="@drawable/et_red_box"
+                    android:hint="@string/number_of_outlets"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:padding="8dp"
+                    android:singleLine="true"
+                    android:textSize="@dimen/_13sdp" />
+
+            </LinearLayout>
+
+            <in.parangat.a3charger.fontclass.SemiBoldTextView
+                android:id="@+id/lable_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:text="Location Photo"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintTop_toBottomOf="@id/lyt1" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_location_photo"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_60sdp"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@id/lable_1" />
+
+            <in.parangat.a3charger.fontclass.SemiBoldTextView
+                android:id="@+id/lable_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:text="GPS Photo"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintTop_toBottomOf="@id/rv_location_photo" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_gps_photo"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_60sdp"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@id/lable_2" />
+
+            <in.parangat.a3charger.fontclass.SemiBoldTextView
+                android:id="@+id/lable_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:text="Nearest Vector Location"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintTop_toBottomOf="@id/rv_gps_photo" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_nearest_vector_location"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_60sdp"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@id/lable_3" />
+
+            <LinearLayout
+                android:id="@+id/lyt5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="4dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rv_nearest_vector_location">
+
+                <in.parangat.a3charger.fontclass.SemiBoldTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/address"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp" />
+
+                <in.parangat.a3charger.fontclass.ET_Edittext
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:background="@drawable/et_red_box"
+                    android:hint="Enter Detailed address"
+                    android:imeOptions="actionNext"
+                    android:inputType="textPostalAddress"
+                    android:maxLines="3"
+                    android:padding="@dimen/_8sdp"
+                    android:textSize="@dimen/_12sdp" />
+
+                <in.parangat.a3charger.fontclass.SemiBoldTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:text="Contact person at Venue"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp" />
+
+                <in.parangat.a3charger.fontclass.ET_Edittext
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/et_red_box"
+                    android:hint="Contact"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:padding="@dimen/_8sdp"
+                    android:singleLine="true"
+                    android:textSize="@dimen/_12sdp" />
+
+
+                <in.parangat.a3charger.fontclass.SemiBoldTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:text="Daily Footfall"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp" />
+
+                <in.parangat.a3charger.fontclass.ET_Edittext
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/et_red_box"
+                    android:hint="Daily Footfall"
+                    android:imeOptions="actionNext"
+                    android:padding="@dimen/_8sdp"
+                    android:singleLine="true" />
+
+                <in.parangat.a3charger.fontclass.SemiBoldTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:text="@string/no_of_employees"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp" />
+
+                <in.parangat.a3charger.fontclass.ET_Edittext
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/et_red_box"
+                    android:digits="0123456789"
+                    android:hint="@string/no_of_employees"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:padding="@dimen/_8sdp"
+                    android:singleLine="true" />
+
+                <in.parangat.a3charger.fontclass.SemiBoldTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:text="Type of Machine(Slots)"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp" />
+
+                <in.parangat.a3charger.fontclass.ET_Edittext
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/et_red_box"
+                    android:hint="Select Slot"
+                    android:padding="@dimen/_8sdp"
+                    android:singleLine="true" />
+
+
+                <in.parangat.a3charger.fontclass.SemiBoldTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:text="@string/nearest_vector_distance"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp" />
+
+                <in.parangat.a3charger.fontclass.ET_Edittext
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/et_red_box"
+                    android:hint="@string/nearest_vector_distance"
+                    android:imeOptions="actionNext"
+                    android:padding="@dimen/_8sdp"
+                    android:singleLine="true"
+                    android:textSize="@dimen/_12sdp" />
+
+                <in.parangat.a3charger.fontclass.SemiBoldTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:text="@string/suitable_location_for_a3"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp" />
+
+                <in.parangat.a3charger.fontclass.ET_Edittext
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/edittestbox"
+                    android:hint="@string/select_status"
+                    android:imeOptions="actionNext"
+                    android:padding="@dimen/_8sdp"
+                    android:singleLine="true"
+                    android:textSize="@dimen/_12sdp" />
+
+
+                <in.parangat.a3charger.fontclass.SemiBoldTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:text="@string/date"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp" />
+
+                <in.parangat.a3charger.fontclass.ET_Edittext
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/et_red_box"
+                    android:hint="07/01/2022"
+                    android:inputType="date"
+                    android:padding="@dimen/_8sdp"
+                    android:singleLine="true" />
+
+                <in.parangat.a3charger.fontclass.SemiBoldTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:text="@string/remarks"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp" />
+
+                <in.parangat.a3charger.fontclass.ET_Edittext
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/et_red_box"
+                    android:hint="@string/remarks"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:padding="@dimen/_8sdp"
+                    android:singleLine="true"
+                    android:textSize="@dimen/_12sdp" />
+
+            </LinearLayout>
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:background="@drawable/drawable_box"
+                android:onClick="@{listener.onClick}"
+                android:text="@string/submit"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lyt5" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>
+
+
+
+
+
+
+
+
+
