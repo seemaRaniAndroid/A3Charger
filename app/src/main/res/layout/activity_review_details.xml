@@ -11,6 +11,7 @@
 
     </data>
 
+
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -59,7 +60,7 @@
                     android:layout_alignParentEnd="true"
                     android:onClick="@{listener.onClick}"
                     android:padding="8dp"
-                    android:src="@android:drawable/ic_menu_edit" />
+                    android:src="@drawable/ic_edit" />
             </RelativeLayout>
 
             <LinearLayout
@@ -81,6 +82,7 @@
                     android:textSize="12sp" />
 
                 <in.parangat.a3charger.fontclass.ET_Edittext
+                    android:id="@+id/edt_no_of_outlet"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_4sdp"
@@ -108,7 +110,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_location_photo"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_60sdp"
+                android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 app:layout_constraintTop_toBottomOf="@id/lable_1" />
 
@@ -125,7 +127,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_gps_photo"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_60sdp"
+                android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 app:layout_constraintTop_toBottomOf="@id/lable_2" />
 
@@ -142,7 +144,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_nearest_vector_location"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_60sdp"
+                android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 app:layout_constraintTop_toBottomOf="@id/lable_3" />
 
@@ -165,6 +167,7 @@
                     android:textSize="@dimen/_12sdp" />
 
                 <in.parangat.a3charger.fontclass.ET_Edittext
+                    android:id="@+id/edt_address"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_4sdp"
@@ -185,6 +188,7 @@
                     android:textSize="@dimen/_12sdp" />
 
                 <in.parangat.a3charger.fontclass.ET_Edittext
+                    android:id="@+id/edt_contact_person"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
@@ -206,6 +210,7 @@
                     android:textSize="@dimen/_12sdp" />
 
                 <in.parangat.a3charger.fontclass.ET_Edittext
+                    android:id="@+id/edt_daily_footfall"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
@@ -224,6 +229,7 @@
                     android:textSize="@dimen/_12sdp" />
 
                 <in.parangat.a3charger.fontclass.ET_Edittext
+                    android:id="@+id/edt_no_of_employee"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
@@ -244,6 +250,7 @@
                     android:textSize="@dimen/_12sdp" />
 
                 <in.parangat.a3charger.fontclass.ET_Edittext
+                    android:id="@+id/edt_no_slots"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
@@ -262,6 +269,7 @@
                     android:textSize="@dimen/_12sdp" />
 
                 <in.parangat.a3charger.fontclass.ET_Edittext
+                    android:id="@+id/edt_nearest_distance"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
@@ -281,6 +289,7 @@
                     android:textSize="@dimen/_12sdp" />
 
                 <in.parangat.a3charger.fontclass.ET_Edittext
+                    android:id="@+id/edt_suitable_location"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
@@ -301,6 +310,7 @@
                     android:textSize="@dimen/_12sdp" />
 
                 <in.parangat.a3charger.fontclass.ET_Edittext
+                    android:id="@+id/edt_date"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
@@ -319,15 +329,20 @@
                     android:textSize="@dimen/_12sdp" />
 
                 <in.parangat.a3charger.fontclass.ET_Edittext
+                    android:id="@+id/edt_remarks"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:background="@drawable/et_red_box"
+                    android:backgroundTint="#fad2cf"
                     android:hint="@string/remarks"
                     android:imeOptions="actionNext"
-                    android:inputType="text"
+                    android:inputType="textMultiLine"
+                    android:lines="5"
+                    android:minLines="1"
+                    android:gravity="top|left"
+                    android:maxLines="10"
                     android:padding="@dimen/_8sdp"
-                    android:singleLine="true"
                     android:textSize="@dimen/_12sdp" />
 
             </LinearLayout>
@@ -339,7 +354,6 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
                 android:background="@drawable/drawable_box"
-                android:onClick="@{listener.onClick}"
                 android:text="@string/submit"
                 android:textAllCaps="false"
                 android:textColor="@color/white"

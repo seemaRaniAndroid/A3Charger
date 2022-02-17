@@ -2,27 +2,52 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".UI.Activities.SubmittedSuccessfully">
-
-
-    <include
-        android:id="@+id/header_dash"
-        layout="@layout/layout_appbar" />
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@id/header_dash">
+        android:layout_height="match_parent"
+        tools:context=".UI.Activities.SubmittedSuccessfully">
 
+
+        <include
+            android:id="@+id/header_dash"
+            layout="@layout/layout_appbar" />
+
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/header_dash"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/thank_you_image" />
+
+        <in.parangat.a3charger.fontclass.BoldTextView
+            android:id="@+id/tv_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_40sdp"
+            android:paddingHorizontal="@dimen/_5sdp"
+            android:text="@string/form_submitted_successfully"
+            android:textColor="@color/label_color"
+            android:textSize="@dimen/_12sdp"
+            android:textStyle="bold" />
+
+        <in.parangat.a3charger.fontclass.BoldTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_40sdp"
+            android:paddingHorizontal="@dimen/_5sdp"
+            android:text="@string/thank_you"
+            android:textColor="@color/label_color"
+            android:textSize="@dimen/_16sdp"
+            android:textStyle="bold" />
 
 
     </RelativeLayout>
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

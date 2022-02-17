@@ -47,7 +47,7 @@ interface ApiServices {
     ): Observable<VenueResponse>
 
 
-    @FormUrlEncoded
+   /* @FormUrlEncoded
     @POST("rider/addRecce")
     @JvmSuppressWildcards
     @Headers(
@@ -58,7 +58,7 @@ interface ApiServices {
     )
     fun getReceeData(
         @Field("venue_id") venue_id: String,
-        ): Observable<ReceeResponse>
+        ): Observable<ReceeResponse>*/
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Companion Object of Retrofit~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//

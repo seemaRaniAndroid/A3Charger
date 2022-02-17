@@ -5,7 +5,7 @@ import `in`.parangat.a3charger.Base.BaseFragment
 import `in`.parangat.a3charger.Helper.TAG
 import `in`.parangat.a3charger.Helper.setRecyclerView
 import `in`.parangat.a3charger.R
-import `in`.parangat.a3charger.UI.Activities.Detail.DetailActivity
+import `in`.parangat.a3charger.UI.Activities.Detail.DetailsActivity
 import `in`.parangat.a3charger.databinding.FragmentPendingBinding
 import `in`.parangat.a3charger.model.VenueDataItem
 import `in`.parangat.a3charger.viewmodel.PendingViewModel
@@ -64,7 +64,7 @@ class PendingFragment : BaseFragment() {
 
             completedAdapter?.setOnItemClickListener(object : CompletedAdapter.OnItemClickListener {
                 override fun onItemClick(position: Int, arrayList: ArrayList<VenueDataItem>) {
-                    val intent = Intent(requireContext(), DetailActivity::class.java)
+                    val intent = Intent(requireContext(), DetailsActivity::class.java)
                     intent.putExtra("venue_id", arrayList[position].id.toString())
                     startActivity(intent)
 

@@ -17,4 +17,22 @@
     <string name="submit">Submit</string>
     <string name="number_of_outlets">Number of Outlets</string>
     <string name="address">Address</string>
+    <string name="thank_you">Thank You</string>
+    <string name="form_submitted_successfully">Form Submitted Successfully.</string>
+    <string name="error_empty">This Field cannot be empty</string>
+
+    <string-array name="select_slot">
+
+        <item>6 Slots</item>
+        <item>12 Slots</item>
+        <item>18 Slots</item>
+        <item>24 Slots</item>
+        <item>48 Slots</item>
+
+    </string-array>
+    <string-array name="suitable_location">
+        <item>Yes</item>
+        <item>No</item>
+
+    </string-array>
 </resources>

@@ -3,22 +3,30 @@
     package="in.parangat.a3charger">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
         android:allowClearUserData="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.A3Charger"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".UI.Activities.Detail.ReviewDetailsActivity"
+            android:name=".UI.Activities.Detail.ReviewDetailActivity"
             android:exported="false" />
         <activity
-            android:name=".UI.Activities.Detail.DetailActivity"
+            android:name=".UI.Activities.Detail.DetailsActivity"
             android:exported="false" />
+
         <activity
             android:name=".UI.Activities.Venue.VenueActivity"
             android:exported="false" />

@@ -73,6 +73,7 @@
                     android:textSize="12sp" />
 
                 <in.parangat.a3charger.fontclass.ET_Edittext
+                    android:id="@+id/edt_no_of_outlet"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_4sdp"
@@ -96,6 +97,15 @@
                 android:textSize="@dimen/_12sdp"
                 app:layout_constraintTop_toBottomOf="@id/lyt1" />
 
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_location_preview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                app:layout_constraintTop_toBottomOf="@id/lable_1" />
+
+
             <LinearLayout
                 android:id="@+id/lyt2"
                 android:layout_width="match_parent"
@@ -103,14 +113,15 @@
                 android:layout_marginTop="@dimen/_4sdp"
                 android:orientation="horizontal"
                 android:weightSum="1"
-                app:layout_constraintTop_toBottomOf="@id/lable_1">
+                app:layout_constraintTop_toBottomOf="@id/rv_location_preview">
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/btn_photo"
+                    android:id="@+id/btn_location_photo"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.5"
                     android:background="@drawable/drawable_box"
+                    android:onClick="@{listener.onClick}"
                     android:text="@string/click_to_upload"
                     android:textAllCaps="false"
                     android:textColor="@color/white"
@@ -137,6 +148,14 @@
                 android:textSize="@dimen/_12sdp"
                 app:layout_constraintTop_toBottomOf="@id/lyt2" />
 
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_gps_preview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                app:layout_constraintTop_toBottomOf="@id/lable_2" />
+
             <LinearLayout
                 android:id="@+id/lyt3"
                 android:layout_width="match_parent"
@@ -144,10 +163,10 @@
                 android:layout_marginTop="@dimen/_4sdp"
                 android:orientation="horizontal"
                 android:weightSum="1"
-                app:layout_constraintTop_toBottomOf="@id/lable_2">
+                app:layout_constraintTop_toBottomOf="@id/rv_gps_preview">
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/btn_gps"
+                    android:id="@+id/btn_gps_photo"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.5"
@@ -178,6 +197,15 @@
                 android:textSize="@dimen/_12sdp"
                 app:layout_constraintTop_toBottomOf="@id/lyt3" />
 
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_vector_location_preview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                app:layout_constraintTop_toBottomOf="@id/lable_3"
+                tools:layout_editor_absoluteX="0dp" />
+
             <LinearLayout
                 android:id="@+id/lyt4"
                 android:layout_width="match_parent"
@@ -185,10 +213,10 @@
                 android:layout_marginTop="@dimen/_4sdp"
                 android:orientation="horizontal"
                 android:weightSum="1"
-                app:layout_constraintTop_toBottomOf="@id/lable_3">
+                app:layout_constraintTop_toBottomOf="@id/rv_vector_location_preview">
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/btn_vector"
+                    android:id="@+id/btn_vector_photo"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.5"
@@ -228,6 +256,7 @@
                     android:textSize="@dimen/_12sdp" />
 
                 <in.parangat.a3charger.fontclass.ET_Edittext
+                    android:id="@+id/edt_address"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_4sdp"
@@ -248,6 +277,7 @@
                     android:textSize="@dimen/_12sdp" />
 
                 <in.parangat.a3charger.fontclass.ET_Edittext
+                    android:id="@+id/edt_contact_person"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
@@ -269,6 +299,7 @@
                     android:textSize="@dimen/_12sdp" />
 
                 <in.parangat.a3charger.fontclass.ET_Edittext
+                    android:id="@+id/edt_daily_footfall"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
@@ -287,6 +318,7 @@
                     android:textSize="@dimen/_12sdp" />
 
                 <in.parangat.a3charger.fontclass.ET_Edittext
+                    android:id="@+id/edt_no_of_employee"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
@@ -306,15 +338,15 @@
                     android:textColor="@color/black"
                     android:textSize="@dimen/_12sdp" />
 
-                <in.parangat.a3charger.fontclass.ET_Edittext
+                <Spinner
+                    android:id="@+id/spin_select_slot"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="@dimen/_35sdp"
                     android:layout_marginTop="4dp"
                     android:background="@drawable/et_red_box"
                     android:drawableEnd="@drawable/dropdown"
-                    android:hint="Select Slot"
                     android:padding="@dimen/_8sdp"
-                    android:singleLine="true" />
+                    android:spinnerMode="dropdown" />
 
 
                 <in.parangat.a3charger.fontclass.SemiBoldTextView
@@ -326,6 +358,7 @@
                     android:textSize="@dimen/_12sdp" />
 
                 <in.parangat.a3charger.fontclass.ET_Edittext
+                    android:id="@+id/edt_nearest_distance"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
@@ -344,17 +377,15 @@
                     android:textColor="@color/black"
                     android:textSize="@dimen/_12sdp" />
 
-                <in.parangat.a3charger.fontclass.ET_Edittext
+                <Spinner
+                    android:id="@+id/spin_suitable_location"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="@dimen/_35sdp"
                     android:layout_marginTop="4dp"
-                    android:background="@drawable/edittestbox"
+                    android:background="@drawable/et_red_box"
                     android:drawableEnd="@drawable/dropdown"
-                    android:hint="@string/select_status"
-                    android:imeOptions="actionNext"
                     android:padding="@dimen/_8sdp"
-                    android:singleLine="true"
-                    android:textSize="@dimen/_12sdp" />
+                    android:spinnerMode="dropdown" />
 
 
                 <in.parangat.a3charger.fontclass.SemiBoldTextView
@@ -366,11 +397,14 @@
                     android:textSize="@dimen/_12sdp" />
 
                 <in.parangat.a3charger.fontclass.ET_Edittext
+                    android:id="@+id/edt_date"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:background="@drawable/et_red_box"
+                    android:clickable="false"
                     android:drawableEnd="@drawable/icon_calender"
+                    android:focusable="false"
                     android:hint="07/01/2022"
                     android:inputType="date"
                     android:padding="@dimen/_8sdp"
@@ -385,6 +419,7 @@
                     android:textSize="@dimen/_12sdp" />
 
                 <in.parangat.a3charger.fontclass.ET_Edittext
+                    android:id="@+id/edt_remarks"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
@@ -405,11 +440,11 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
                 android:background="@drawable/drawable_box"
+                android:onClick="@{listener.onClick}"
                 android:text="@string/next"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
                 android:textSize="14sp"
-                android:onClick="@{listener.onClick}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/lyt5" />
